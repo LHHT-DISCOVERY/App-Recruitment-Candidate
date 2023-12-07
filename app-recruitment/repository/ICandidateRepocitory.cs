@@ -17,6 +17,8 @@ namespace app_recruitment.repository
         Candidate findCandidateById(int id);
 
         void viewFullNameCandidate();
+
+        List<Candidate> sortByTypeAndBirthDayService(List<Candidate>  candidates);
     }
 
 }

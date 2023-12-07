@@ -35,7 +35,6 @@ namespace app_recruitment.repository
             }
         }
 
-
         public void enterCertificate(int candidateID, int numberOfCertificate)
         {
             int count = 0;

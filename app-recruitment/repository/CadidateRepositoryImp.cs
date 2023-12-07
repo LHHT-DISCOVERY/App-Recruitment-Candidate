@@ -126,6 +126,7 @@ namespace app_recruitment.repository
                                 t.Phone = reader.GetString(reader.GetOrdinal("phone"));
                                 t.Email = reader.GetString(reader.GetOrdinal("email"));
                                 t.Certificate = getListCertificate(t.CandidateID);
+                                t.CandidateType = reader.GetInt32(reader.GetOrdinal("candidateType"));
                             }
                         }
                     }
@@ -482,6 +483,16 @@ namespace app_recruitment.repository
                 }
             }
             return null;
+        }
+
+        public List<Candidate> sortByTypeAndBirthDayService(List<Candidate> candidates)
+        {
+            if (candidates != null)
+            {
+                candidates.Sort();
+            }
+            return candidates;
+            throw new NotImplementedException();
         }
     }
 }

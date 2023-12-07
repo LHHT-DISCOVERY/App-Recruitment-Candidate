@@ -33,6 +33,12 @@ namespace app_recruitment.service
             return candidateRepository.getAll<T>();
         }
 
+        public List<Candidate> sortByTypeAndBirthDayService(List<Candidate> candidates)
+        {
+            return candidateRepository.sortByTypeAndBirthDayService(candidates);
+            throw new NotImplementedException();
+        }
+
         public void updateCandidate(int id)
         {
             candidateRepository.updateCandidate(id);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace app_recruitment.model
 {
-    internal  class Candidate
+    internal class Candidate : IComparable<Candidate>
     {
         private int candidateID;
         private String candidateFullName;
@@ -70,7 +70,20 @@ namespace app_recruitment.model
 
         public override string ToString()
         {
-            return "Candidate:   " + CandidateID + " -|- FullName : " + CandidateFullName + "-|- BirthDay : " + Birthday.ToString("dd/MM/yyyy") + "-|- Phone : " + Phone + "-|- Email : " + Email + "-|- Certificate : " + CertificateListToString(Certificate);
+            return "Candidate:   " + CandidateID + " -|- FullName : " + CandidateFullName + "-|- BirthDay : " + Birthday.ToString("dd/MM/yyyy") + "-|- Phone : " + Phone + "-|- Email : " + Email + "-|- Certificate : " + CertificateListToString(Certificate) + "-|- Level : " + CandidateType;
+        }
+
+        public int CompareTo(Candidate other)
+        {
+            int typecompare = this.CandidateType - other.CandidateType;
+            if (typecompare != 0)
+            {
+                return typecompare;
+            }
+            int otherYearBirthday = (int)other.Birthday.Year; 
+            int thisYearBirthday = (int)this.Birthday.Year;
+            return otherYearBirthday.CompareTo(thisYearBirthday); // Nam sinh lớn hơn đứng trước (nghĩa là năm giảm dần , tuổi tăng dần) and giảm dần thì thisYearBirthday.compareTo(otherYearBirthday)
+            throw new NotImplementedException();
         }
     }
 }

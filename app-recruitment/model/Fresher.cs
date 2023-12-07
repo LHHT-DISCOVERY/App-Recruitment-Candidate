@@ -39,8 +39,4 @@ namespace app_recruitment.model
             return base.ToString() + "-|- GraduationDate : " + GraduationDate.ToString("dd/MM/yyyy") + "-|- GraduationRank : " + GraduationRank + "-|- Education : " + Education;
         }
     }
-
-
-
-    
 }

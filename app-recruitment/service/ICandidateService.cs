@@ -15,8 +15,10 @@ namespace app_recruitment.service
 
         void updateCandidate(int id);
 
-        Candidate findCandidateById(int  id);
+        Candidate findCandidateById(int id);
 
         void viewFullNameCandidate();
+
+        List<Candidate> sortByTypeAndBirthDayService(List<Candidate> candidates);
     }
 }

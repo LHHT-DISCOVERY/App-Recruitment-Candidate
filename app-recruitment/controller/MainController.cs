@@ -79,6 +79,21 @@ namespace app_recruitment.controller
                         break;
                     case 5:
                         Console.WriteLine("--- Sort  Candiate by Birthday  ---");
+                        Console.WriteLine("--- Before sort --- ");
+                        int count = 0;
+                        List<Candidate> listCa = candidateService.getAll<Candidate>(); 
+                        foreach (Candidate candidate in listCa)
+                        {
+                            Console.WriteLine(candidate.ToString());
+                        }
+                        Console.WriteLine("--- After sort --- ");
+                        candidateService.sortByTypeAndBirthDayService(listCa);
+                        foreach (Candidate candidate in listCa)
+                        {
+                            Console.WriteLine(candidate.ToString());
+                            count++;
+                        }
+                        Console.WriteLine("Number of candidate is : " + count);
                         break;
                     case 6:
                         Console.WriteLine("--- View Full Name Candidate ---");
