@@ -75,14 +75,14 @@ namespace app_recruitment.model
 
         public int CompareTo(Candidate other)
         {
-            int typecompare = this.CandidateType - other.CandidateType;
+            int typecompare = this.CandidateType - other.CandidateType; // tăng dần thì lấy this so với other , và ngược lại
             if (typecompare != 0)
             {
                 return typecompare;
             }
             int otherYearBirthday = (int)other.Birthday.Year; 
             int thisYearBirthday = (int)this.Birthday.Year;
-            return otherYearBirthday.CompareTo(thisYearBirthday); // Nam sinh lớn hơn đứng trước (nghĩa là năm giảm dần , tuổi tăng dần) and giảm dần thì thisYearBirthday.compareTo(otherYearBirthday)
+            return otherYearBirthday.CompareTo(thisYearBirthday); // năm sinh lớn hơn đứng trước (nghĩa là năm giảm dần , tuổi tăng dần) and giảm dần thì thisYearBirthday.compareTo(otherYearBirthday)
             throw new NotImplementedException();
         }
     }
